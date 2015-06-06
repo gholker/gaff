@@ -4,6 +4,8 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
+import com.squareup.spoon.Spoon;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,5 +25,10 @@ public class MainActivityEspressoTest {
     @Test
     public void hasHelloWorld() {
         onView(withText("Hello world!")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void spoonScreenshot() {
+        Spoon.screenshot(activityTestRule.getActivity(), "hello");
     }
 }
